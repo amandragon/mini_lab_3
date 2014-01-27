@@ -13,6 +13,7 @@ class LinksController < ApplicationController
 
 	def create
 		new_link=params.require(:link).permit(:original_link, :random_generated_string)
+		new_link[:random_generated_string]=SecureRandom.urlsafe_base64(7)
 		link=Link.create(new_link)
 		redirect_to links_path(link.id)
 	end
@@ -24,7 +25,6 @@ class LinksController < ApplicationController
 	end
 
 	def save
-	@link<<new_link
 	redirect_to links_path(link.original_link)
 	end
 
