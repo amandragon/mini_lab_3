@@ -4,5 +4,9 @@ class Link < ActiveRecord::Base
 		@random_generated_string="/#{SecureRandom.urlsafe_base64(5)}"
 end
 
+def original_link
+
+	end
+
 
 end

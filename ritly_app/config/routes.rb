@@ -14,4 +14,6 @@ RitlyApp::Application.routes.draw do
 
     get '/links/:random_generated_string', to: 'links#result', as: :result
 
+    get '/links.:id/:original_link', to: 'links#original', as: :original_link
+
 end

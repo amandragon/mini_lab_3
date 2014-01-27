@@ -1,11 +1,16 @@
- <h2>Here is your shortened link</h2>
+ <h2>Here is a preview of your shortened link</h2>
+ <p>Would you like to save this link?</p>
 
 
  <div>
-        <div> <%= @link.id %> </div>
-        <div> <%=@link.original_link%> </div>
-        <div> <%= @link.random_generated_string %> </div> 
+        <div> Link ID: <%= @link.id %> </div>
+        <div> Original Link: <%=@link.original_link%> </div>
+        <div> Shortened Link: <%= @new_link=@link.random_generated_string %> </div> 
+</div>
+
+
+
+<button action= :save type="button" class="btn btn-success">Save</button>
+<a href='/links.@link.id' button type="button" class="btn btn-primary">Refresh for new link</button></a>
      
 
-
- </div>
