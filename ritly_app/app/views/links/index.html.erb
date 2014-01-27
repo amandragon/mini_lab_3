@@ -1,1 +1,9 @@
 <h2>This is the links index</h2>
+
+<% @links.each do |link| %>
+    <div>
+        Original link: <%= link[:original_link] %> <br>
+        ID: <%= link[:id] %><br>
+        Shortened URL: <%= link[:random_generated_string] %><br>
+    </div>
+<% end %>
