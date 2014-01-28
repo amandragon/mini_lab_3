@@ -25,9 +25,9 @@ class LinksController < ApplicationController
 	end
 
 	def go
-	checkit = params[:id]
-	sendto=Link.find_by(checkit)
-	redirect_to "http://#{sendto.original_link}"
+	id=params[:random_generated_string]
+	link=Link.find_by_random_generated_string(id)
+	redirect_to link.original_link
 	end
  
 

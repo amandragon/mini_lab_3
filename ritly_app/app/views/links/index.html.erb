@@ -1,8 +1,27 @@
 
-    <% @links.each do |link| %>
+<h2>Welcome to Ritly!</h2>
+<p>Please click the button below to create a new shortened URL.</p>
+<p>For your convenience, we also have a list of previously shortened URLs to choose from in the table below.</p>
 
-       Original Link: <%=link[:original_link] %> <br>
-       ID:<%= link[:id] %><br>
-       Shortened Link: <%=link[:random_generated_string] %><br>
+<a href='/links/new' button type="button" class="btn btn-primary">Shorten a URL</a></button>
+
+
+
+<table class="table table-striped">
+
+<thead>
+<th>Original Link</th>
+<th>ID</th>
+<th>Shortened Link</th>
+</thead>
+
+<tbody>
+	 <% @links.each do |link| %>
+    	<tr>
+       <td><%=link[:original_link] %></td> 
+       <td><%= link[:id] %></td>
+       <td><%=link[:random_generated_string]%></td></tr>
         <%end%>
+        </tbody>
 
+</table>
