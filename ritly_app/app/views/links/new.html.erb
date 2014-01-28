@@ -1,9 +1,10 @@
-<h2>Welcome to Ritly!</h2>
+<h2>Let's shorten your URL!</h2>
 <p>Please enter your URL to be shortened.</p>
+<p>Please note that your URL must be in the http:// form to be accepted.</p>
 
 
 <%= form_for :link, url: links_path, method: :post do |f| %>
-    <%= f.url_field :original_link, placeholder: "enter your link" %> <br>
+    <%= f.url_field :original_link, placeholder: "enter your link in http:// form" %> <br>
     <%= f.submit %>
 <% end %>
 

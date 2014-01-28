@@ -1,6 +1,8 @@
 RitlyApp::Application.routes.draw do
 
-    root to: 'links#index'
+resources :users, :sessions
+    #links_controller
+   	root to: 'links#index'
 
     get '/links/new', to: 'links#new', as: :new_link
 
@@ -12,6 +14,11 @@ RitlyApp::Application.routes.draw do
 
     delete '/links/:id', to: 'links#delete', as: :delete
 
+    #authentication
+
+    get '/signup' => 'users#new'
+delete '/signout', to: 'sessions#destroy'
+get'/signin' => 'sessions#new'
 
 
 end
