@@ -4,16 +4,14 @@ RitlyApp::Application.routes.draw do
 
     get '/links/new', to: 'links#new', as: :new_link
 
-   get '/links.:id', to: 'links#show', as: :link
+   get '/links/:id', to: 'links#preview', as: :link
+
+   get '/go/:random_generated_string', to: 'links#go', as: :go
 
     post '/links', to: 'links#create'
 
-    get '/links/save', to: 'links#save', as: :save
+    delete '/links/:id', to: 'links#delete', as: :delete
 
-    get '/links/delete', to: 'links#delete', as: :delete
 
-    get '/links.:id/:random_generated_string', to: 'links#result', as: :result
-
-    get '/links.:id/:original_link', to: 'links#original', as: :original_link
 
 end

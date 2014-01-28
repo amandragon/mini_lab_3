@@ -13,25 +13,28 @@ class LinksController < ApplicationController
 
 	def create
 		new_link=params.require(:link).permit(:original_link, :random_generated_string)
-		new_link[:random_generated_string]=SecureRandom.urlsafe_base64(7)
+		new_link[:random_generated_string]=SecureRandom.urlsafe_base64(3)
 		link=Link.create(new_link)
-		redirect_to links_path(link.id)
+		redirect_to link_path(link.id)
 	end
 
-	def show
-		 id = params[:id]
-        @link = Link.find(id)
-         render :show
+	def preview
+	id = params[:id]
+    @link = Link.find(id)
+	render :preview
 	end
 
-	def save
-	redirect_to links_path(link.original_link)
+	def go
+	checkit = params[:id]
+	sendto=Link.find_by(checkit)
+	redirect_to "http://#{sendto.original_link}"
 	end
+ 
+
+
 
 	def delete
+	#need to make a delete method for the show page
 	end
 
-	def result
-		redirect_to '/links.:id/:original_link'
-	end
 end

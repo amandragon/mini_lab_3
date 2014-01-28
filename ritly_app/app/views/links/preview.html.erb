@@ -1,0 +1,12 @@
+ <h2>Here is a preview of your shortened link</h2>
+ <p>Would you like to save this link?</p>
+
+
+ <div>
+        <div> Link ID: <%= @link.id %> </div>
+        <div> Original Link: <%=@link.original_link%> </div>
+        <div> Shortened Link:<a href="/go/<%=@link.random_generated_string%>"/>localhost:3000/<%=@link.random_generated_string%></div> 
+</div>
+     
+<!-- make a button with a form in the button -->
+<!-- url links to route to an action in the controller then the controller uses the model methods to destroy -->
